@@ -24,7 +24,7 @@ const Boton = styled.input`
     }
 `
 
-const Formulario = () => {
+const Formulario = ({setMoneda, setCriptoMoneda}) => {
 
     // state of the cryptocurrency list
     const [ listacripto, setListaCripto ] = useState([]);
@@ -36,7 +36,7 @@ const Formulario = () => {
         { codigo: 'GBP', nombre: 'Libra Esterlina' },
         { codigo: 'MXN', nombre: 'Peso Mexicano' },
         { codigo: 'COL', nombre: 'Peso Colombiano' },
-        { codigo: 'USD', nombre: 'Dolar de estados unidos' }
+        { codigo: 'USD', nombre: 'Dolar estadounidense' }
     ];
 
     // Use useMoneda
@@ -70,6 +70,8 @@ const Formulario = () => {
 
         // pass data to main component
         setError(false);
+        setMoneda(moneda);
+        setCriptoMoneda(criptomoneda)
     }
 
     return (  
